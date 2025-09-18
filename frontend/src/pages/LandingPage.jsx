@@ -3,7 +3,7 @@ import image from "../../public/interviewImage.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { LuSparkles } from "react-icons/lu";
-import Features from "../components/Cards/features";
+import Features from "../components/Cards/Features";
 import Modal from "../components/Modal";
 import Login from "./Auth/Login";
 import SignUp from "./Auth/SignUp";

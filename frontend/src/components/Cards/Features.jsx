@@ -1,6 +1,6 @@
 import React from "react";
 import { data } from "../../utils/data";
-import Feature from "./feature";
+import Feature from "./Feature";
 
 const Features = ({ col, st, end }) => {
   const gridCols = {
@@ -12,11 +12,11 @@ const Features = ({ col, st, end }) => {
 
   return (
     <div className={`grid grid-cols-1 ${gridCols[col]} gap-6 mb-8`}>
-      {data.slice(st, end).map((feature) => (
+      {data.slice(st, end).map((oneFeature) => (
         <Feature
-          key={feature.id}
-          title={feature.title}
-          description={feature.description}
+          key={oneFeature.id}
+          title={oneFeature.title}
+          description={oneFeature.description}
         />
       ))}
     </div>
