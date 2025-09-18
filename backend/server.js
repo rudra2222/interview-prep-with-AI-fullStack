@@ -33,13 +33,14 @@ app.use("/api/ai/generate-questions", protect, generateInterviewQuestions);
 app.use("/api/ai/generate-explanation", protect, generateConceptExplanation);
 
 // For local development – only listen if not running in a serverless environment
-if (process.env.NODE_ENV !== "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
   });
 }
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
